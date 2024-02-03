@@ -29,6 +29,8 @@ const onSubmit = (e) => {
   deleteBtn.innerHTML = "Delete";
   deleteBtn.onclick = () => {
     itemEl.remove();
+    totalItems--;
+    checkTotal();
   };
   itemEl.appendChild(deleteBtn);
 
