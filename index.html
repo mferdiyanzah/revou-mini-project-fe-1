@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <header>
-        <h1>
-            Warung Madura
-        </h1>
+      <h1>Warung Madura</h1>
     </header>
+
+    <main>
+      <section class="add-form">
+        <form onsubmit="onSubmit(e)" action="#" id="add-form">
+          <div id="text-input">
+            <div>
+              <label for="item">Nama Barang</label>
+              <input type="text" name="item" id="item_name" />
+            </div>
+
+            <div>
+              <label for="total">Total Barang</label>
+              <input type="number" name="total" id="item_total" />
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Tambah</button>
+        </form>
+      </section>
+
+      <section id="cart"></section>
+    </main>
+
+    <footer>mferdiyanzah@2024</footer>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
