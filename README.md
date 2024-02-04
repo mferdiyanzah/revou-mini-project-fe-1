@@ -10,6 +10,7 @@ Welcome to Warung Madura! This web application allows users to add and delete it
 - **Delete Item:** Remove items from the list when they are no longer needed.
 - **Total Item Count:** Keep track of the total number of items in real-time.
 - **Responsive Design:** Access and manage your items seamlessly across various devices.
+- **Validation:** Prevent adding items with empty fields or invalid input.
 
 ## How to Use
 
@@ -41,3 +42,6 @@ To run this application, clone this repository and open the `index.html` file in
 ### Mobile Version
 
 ![Alt text](/images/ss-mobile-1.png)
+
+## Demonstration Link
+[Here](https://drive.google.com/file/d/1jPunwOQ7hebVzSB1OhCs_XbjIo-B1g_y/view?usp=sharing)
