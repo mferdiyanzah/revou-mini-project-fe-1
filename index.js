@@ -14,10 +14,18 @@ const checkTotal = () => {
 };
 checkTotal();
 
+const itemNameEl = document.getElementById("item_name");
+const itemTotalEl = document.getElementById("item_total");
+
 const onSubmit = (e) => {
   e.preventDefault();
-  const itemName = document.getElementById("item_name").value;
-  const itemTotal = document.getElementById("item_total").value;
+  const itemName = itemNameEl.value;
+  const itemTotal = itemTotalEl.value;
+
+  if (!itemName || !itemTotal) {
+    alert("Nama dan jumlah barang harus diisi");
+    return;
+  }
 
   const itemEl = document.createElement("li");
 
@@ -33,8 +41,10 @@ const onSubmit = (e) => {
     checkTotal();
   };
   itemEl.appendChild(deleteBtn);
-
   cartEl.appendChild(itemEl);
+
+  itemNameEl.value = "";
+  itemTotalEl.value = "";
 
   totalItems++;
   checkTotal();
