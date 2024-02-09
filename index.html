@@ -12,23 +12,31 @@
     </header>
 
     <main>
-      <section class="add-form">
+      <article>
         <form onsubmit="onSubmit(e)" action="#" id="add-form">
           <div id="text-input">
-            <div>
+            <div class="text-input-item">
               <label for="item">Nama Barang</label>
-              <input type="text" name="item" id="item_name" />
+              <input type="text" name="item" id="item_name" tabindex="1" />
+              <p id="item_name_error" class="error-message">&nbsp;</p>
             </div>
 
             <div>
               <label for="total">Total Barang</label>
-              <input type="number" name="total" id="item_total" />
+              <input
+                type="number"
+                name="total"
+                id="item_total"
+                tabindex="2"
+                onkeydown="return event.keyCode !== 69"
+              />
+              <p id="item_total_error" class="error-message">&nbsp;</p>
             </div>
           </div>
 
-          <button type="submit" class="submit-btn">Tambah</button>
+          <button type="submit" class="submit-btn" tabindex="3">Tambah</button>
         </form>
-      </section>
+      </article>
 
       <section id="cart"></section>
     </main>

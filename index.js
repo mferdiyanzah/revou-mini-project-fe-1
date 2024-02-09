@@ -23,7 +23,8 @@ const onSubmit = (e) => {
   const itemTotal = itemTotalEl.value;
 
   if (!itemName || !itemTotal) {
-    alert("Nama dan jumlah barang harus diisi");
+    onItemNameChange();
+    onItemTotalChange();
     return;
   }
 
@@ -49,6 +50,33 @@ const onSubmit = (e) => {
   totalItems++;
   checkTotal();
 };
+
+const onItemNameChange = () => {
+  const idItemNameErrorElement = document.getElementById("item_name_error");
+  if (itemNameEl.value === "") {
+    itemNameEl.classList.add("error");
+    idItemNameErrorElement.innerHTML = "Nama barang harus diisi";
+  } else {
+    itemNameEl.classList.remove("error");
+    idItemNameErrorElement.innerHTML = "&nbsp;";
+  }
+};
+itemNameEl.addEventListener("input", onItemNameChange);
+
+const onItemTotalChange = () => {
+  const idItemTotalErrorElement = document.getElementById("item_total_error");
+  if (itemTotalEl.value === "") {
+    itemTotalEl.classList.add("error");
+    idItemTotalErrorElement.innerHTML = "Jumlah barang harus diisi";
+  } else if (isNaN(itemTotalEl.value)) {
+    itemTotalEl.classList.add("error");
+    idItemTotalErrorElement.innerHTML = "Jumlah barang harus berupa angka";
+  } else {
+    itemTotalEl.classList.remove("error");
+    idItemTotalErrorElement.innerHTML = "&nbsp;";
+  }
+};
+itemTotalEl.addEventListener("input", onItemTotalChange);
 
 const formEl = document.getElementById("add-form");
 formEl.addEventListener("submit", onSubmit);

@@ -32,13 +32,33 @@ h1 {
   cursor: pointer;
 }
 
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.submit-btn:active,
+.submit-btn:focus {
+  background-color: #3e8e41;
+}
+
 input,
 .submit-btn {
   padding: 12px;
   outline: none;
+  border: 2px solid #ccc;
 }
 
-form > #text-input {
+input.error {
+  border: 2px solid red;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+form #text-input {
   display: grid;
   gap: 2em;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -46,12 +66,17 @@ form > #text-input {
   width: 760px;
 }
 
-#text-input > div {
+.error-message {
+  color: red;
+  font-size: 0.8em;
+}
+
+#text-input div {
   display: flex;
   flex-direction: column;
 }
 
-form > button {
+form button {
   width: 100%;
   margin-top: 1em;
   padding: 12px;
@@ -84,15 +109,12 @@ li > button {
   cursor: pointer;
 }
 
-input:hover,
-input:focus,
-input:active {
-  border: 2px solid royalblue;
-  transition: 0.3s;
-}
-
 #cart > p {
   margin-top: 1em;
+}
+
+fieldset {
+  border: none;
 }
 
 @media screen and (max-width: 768px) {
